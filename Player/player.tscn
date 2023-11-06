@@ -317,8 +317,10 @@ autoplay = "Jump"
 shape = SubResource("RectangleShape2D_dj6bc")
 
 [node name="Attack1" type="RayCast2D" parent="."]
+target_position = Vector2(125, 0)
 
 [node name="Attack2" type="RayCast2D" parent="."]
+target_position = Vector2(123, -37)
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2_0hknb")
