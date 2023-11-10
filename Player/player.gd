@@ -81,4 +81,15 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "Attack1":
 		SM.set_state("Idle")
 	if $AnimatedSprite2D.animation == "Died":
-		get_tree().change_scene_to_file("res://Scenes/Dungeon1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/Dungeon1.tscn")
+
+
+#func _on_body_entered(body):
+#var current_level = get_tree().current_scene.scene_file_path
+#if body.name == "Player":
+#if current_level == "res://Scenes/Dungeon1.tscn":
+#get_tree().change_scene_to_file("res://Scenes/Dungeon2.tscn")
+#elif current_level == "res://Scenes/Dungeon2.tscn":
+#get_tree().change_scene_to_file("res://Scenes/Dungeon3.tscn")
+#elif current_level == "res://Scenes/Dungeon3.tscn":
+#get_tree().change_scene_to_file("res://Scenes/End_Game.tscn")

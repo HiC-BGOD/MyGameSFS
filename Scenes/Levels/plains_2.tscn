@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://bq82kdg3m7sos"]
 
-[ext_resource type="Texture2D" uid="uid://d2x25ui2m2upd" path="res://Assets/Tilemaps/Background.png" id="1_w3a4i"]
-[ext_resource type="Texture2D" uid="uid://bnda4a45fu1po" path="res://Assets/Tilemaps/Tree-Assets.png" id="2_cwlkr"]
-[ext_resource type="Texture2D" uid="uid://cnb6vef35n3ad" path="res://Assets/Tilemaps/Tiles.png" id="2_vitsl"]
-[ext_resource type="PackedScene" uid="uid://c1he2f8kxpi7k" path="res://Player/player.tscn" id="3_4yqrn"]
+[ext_resource type="Texture2D" uid="uid://d2x25ui2m2upd" path="res://Assets/Tilemaps/Background.png" id="1_lrw3d"]
+[ext_resource type="Texture2D" uid="uid://cnb6vef35n3ad" path="res://Assets/Tilemaps/Tiles.png" id="2_sfv7n"]
+[ext_resource type="Texture2D" uid="uid://bnda4a45fu1po" path="res://Assets/Tilemaps/Tree-Assets.png" id="3_hundd"]
+[ext_resource type="PackedScene" uid="uid://c1he2f8kxpi7k" path="res://Player/player.tscn" id="4_p6dms"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3yks5"]
-texture = ExtResource("2_vitsl")
+texture = ExtResource("2_sfv7n")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -473,7 +473,7 @@ texture = ExtResource("2_vitsl")
 19:24/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_umean"]
-texture = ExtResource("2_cwlkr")
+texture = ExtResource("3_hundd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -765,7 +765,7 @@ sources/0 = SubResource("TileSetAtlasSource_3yks5")
 sources/1 = SubResource("TileSetAtlasSource_umean")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tj4y6"]
-texture = ExtResource("2_cwlkr")
+texture = ExtResource("3_hundd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1053,7 +1053,7 @@ texture = ExtResource("2_cwlkr")
 18:23/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tecba"]
-texture = ExtResource("2_vitsl")
+texture = ExtResource("2_sfv7n")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1524,7 +1524,7 @@ sources/0 = SubResource("TileSetAtlasSource_tj4y6")
 sources/1 = SubResource("TileSetAtlasSource_tecba")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ka88f"]
-texture = ExtResource("2_vitsl")
+texture = ExtResource("2_sfv7n")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2947,7 +2947,7 @@ sources/0 = SubResource("TileSetAtlasSource_ka88f")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 2321.0
 offset_bottom = 751.0
-texture = ExtResource("1_w3a4i")
+texture = ExtResource("1_lrw3d")
 
 [node name="ForeGround2" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_d538s")
@@ -2966,7 +2966,7 @@ layer_0/tile_data = PackedInt32Array(2555904, 0, 1, 2555905, 65536, 1, 2555906, 
 
 [node name="PlayerContainer" type="Node2D" parent="."]
 
-[node name="Player" parent="PlayerContainer" instance=ExtResource("3_4yqrn")]
+[node name="Player" parent="PlayerContainer" instance=ExtResource("4_p6dms")]
 visible = false
 
 [node name="EnemyContainer" type="Node2D" parent="."]
