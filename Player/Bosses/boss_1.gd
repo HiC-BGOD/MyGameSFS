@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var path = [Vector2(2400.5,540), Vector2(2700.5,540)]
 
 var direction = 1
+var health : int = 100
 
 func _ready():
 	position = path[0]
@@ -20,7 +21,6 @@ func _physics_process(_delta):
 	if velocity.x < 0 and not $AnimatedSprite2D.flip_h: 
 		$AnimatedSprite2D.flip_h = true
 		direction = -1
-
 		$Attack1.target_position.x = -1*abs($Attack1.target_position.x)
 	if velocity.x > 0 and $AnimatedSprite2D.flip_h: 
 		$AnimatedSprite2D.flip_h = false
@@ -36,7 +36,7 @@ func _physics_process(_delta):
 	if $AnimatedSprite2D.animation == "Attack": 
 		$AnimatedSprite2D.offset.x = 7*direction
 	else: $AnimatedSprite2D.offset.x = 0
-	
+
 func set_animation(anim):
 	if $AnimatedSprite2D.animation == anim and $AnimatedSprite2D.is_playing(): return
 	if $AnimatedSprite2D.sprite_frames.has_animation(anim): $AnimatedSprite2D.play(anim)

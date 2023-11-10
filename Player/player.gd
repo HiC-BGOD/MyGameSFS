@@ -17,11 +17,12 @@ var direction = 1
 @export var max_leap = 1500
 
 
+
 var moving = false
 var is_jumping = false
 var double_jumped = false
 var should_direction_flip = true # wether or not player controls (left/right) can flip the player sprite
-
+var health : int = 100 
 
 func _physics_process(_delta):
 	velocity.x = clamp(velocity.x,-max_move,max_move)
