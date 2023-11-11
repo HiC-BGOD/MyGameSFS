@@ -273,6 +273,7 @@ script = ExtResource("3_0to1o")
 script = ExtResource("4_dvigv")
 
 [node name="Timer" type="Timer" parent="StateMachine/Attack"]
+wait_time = 0.5
 
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource("5_jbnai")

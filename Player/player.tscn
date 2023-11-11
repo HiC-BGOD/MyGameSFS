@@ -349,6 +349,7 @@ script = ExtResource("8_sqf1x")
 script = ExtResource("9_cnb3l")
 
 [node name="Timer" type="Timer" parent="StateMachine/Attacking"]
+wait_time = 0.5
 
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("10_tdycw")
