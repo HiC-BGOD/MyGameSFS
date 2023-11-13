@@ -83,7 +83,7 @@ scale = Vector2(9.29562, 8.65062)
 sprite_frames = SubResource("SpriteFrames_jki3k")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.895715
+frame_progress = 0.801535
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

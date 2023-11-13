@@ -310,7 +310,7 @@ script = ExtResource("1_ea2xg")
 position = Vector2(0, -1.90735e-06)
 scale = Vector2(1.7375, 1.7125)
 sprite_frames = SubResource("SpriteFrames_plwj6")
-animation = &"Fall"
+animation = &"Died"
 autoplay = "Jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
