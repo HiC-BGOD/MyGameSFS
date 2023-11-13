@@ -66,6 +66,7 @@ func _on_AnimatedSprite_animation_finished():
 		SM.set_state("Move")
 	if SM.state_name == "Die":
 		queue_free()
+#		get_tree().change_scene_to_file("res://Scenes/Levels/Portal.tscn")
 
 
 func _on_Above_and_Below_body_entered(body):
