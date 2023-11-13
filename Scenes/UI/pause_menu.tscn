@@ -40,57 +40,89 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Pause_Menu" type="Control"]
+[node name="Pause_Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_r2hms")
+
+[node name="pause_menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_r2hms")
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 646.0
+[node name="ColorRect" type="ColorRect" parent="pause_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.678431, 0.0666667, 0.27451, 0.180392)
+metadata/_edit_use_anchors_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(272, 356)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pause_menu"]
+position = Vector2(238, 310)
 scale = Vector2(6.90562, 7.34562)
 sprite_frames = SubResource("SpriteFrames_mj5wt")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.846413
+frame_progress = 0.431151
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 464.0
-offset_top = 212.0
-offset_right = 694.0
-offset_bottom = 255.0
+[node name="Label" type="Label" parent="pause_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -124.0
+offset_right = 115.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_q25fm")
 theme_override_font_sizes/font_size = 35
 text = " Paused Game"
+metadata/_edit_use_anchors_ = true
 
-[node name="Resume" type="Button" parent="."]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 327.0
-offset_right = 628.0
-offset_bottom = 362.0
+[node name="Resume" type="Button" parent="pause_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -17.5
+offset_right = 50.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_q25fm")
 text = "Resume"
+metadata/_edit_use_anchors_ = true
 
-[node name="Quit" type="Button" parent="."]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 379.0
-offset_right = 628.0
-offset_bottom = 414.0
+[node name="Quit" type="Button" parent="pause_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 46.0
+offset_right = 50.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_q25fm")
 text = "Quit
 "
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="pause_menu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="pause_menu/Quit" to="." method="_on_quit_pressed"]

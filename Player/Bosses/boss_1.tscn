@@ -254,7 +254,7 @@ script = ExtResource("1_v2y3r")
 position = Vector2(9.53674e-07, 1.90735e-06)
 scale = Vector2(3.3675, 2.8625)
 sprite_frames = SubResource("SpriteFrames_g0pt2")
-animation = &"Attack2"
+animation = &"Hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(11.5, 11)

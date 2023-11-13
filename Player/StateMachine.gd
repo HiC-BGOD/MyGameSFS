@@ -4,14 +4,15 @@ extends Node
 @onready var state = null
 @onready var previous_state = null
 @onready var state_name = ""
-
+@onready var player = get_node("..")
 func _ready():
 	if get_child_count():
 		set_state(get_children()[0].name)
 
 func _physics_process(delta):
-	if state and state.has_method("physics_process"):
+	if state and state.has_method("physics_process") and !player.dying:
 		state.physics_process(delta)
+	
 
 func _process(delta):
 	if state and state.has_method("process"):

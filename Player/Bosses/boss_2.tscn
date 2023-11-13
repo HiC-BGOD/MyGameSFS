@@ -204,6 +204,8 @@ script = ExtResource("7_jniip")
 script = ExtResource("8_s4apj")
 
 [node name="Timer" type="Timer" parent="StateMachine/Attack"]
+wait_time = 0.5
+one_shot = true
 
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource("9_tgnep")

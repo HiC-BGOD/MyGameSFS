@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,7 +12,8 @@ func _process(delta):
 
 
 func _on_resume_pressed():
-	pass # Replace with function body.
+	get_tree().paused = false
+	hide()
 
 
 func _on_quit_pressed():

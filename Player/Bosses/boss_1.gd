@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var path = [Vector2(2400.5,540), Vector2(2700.5,540)]
 
 var direction = 1
-var health : int = 100
+var enemy_health : int = 100
 
 func _ready():
 	position = path[0]
@@ -43,8 +43,11 @@ func set_animation(anim):
 	else: $AnimatedSprite2D.play()
 
 func damage():
-	if SM.state_name != "Die":
-		SM.set_state("Die")
+	enemy_health -= 20
+	set_animation("Hit")
+	if enemy_health <= 0:
+		if SM.state_name != "Die":
+			SM.set_state("Die")
 
 
 func should_attack():
@@ -65,6 +68,10 @@ func _on_AnimatedSprite_animation_finished():
 	if SM.state_name == "Attack":
 		SM.set_state("Move")
 	if SM.state_name == "Die":
+		var portal = load("res://Scenes/Levels/portal.tscn")
+		var p = portal.instantiate()
+		p.position = Vector2(2634,503)
+		get_node("/root/Dungeon1/PortalContainer").add_child(p)
 		queue_free()
 #		get_tree().change_scene_to_file("res://Scenes/Levels/Portal.tscn")
 

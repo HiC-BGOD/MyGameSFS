@@ -23,22 +23,24 @@ var is_jumping = false
 var double_jumped = false
 var should_direction_flip = true # wether or not player controls (left/right) can flip the player sprite
 var health : int = 100 
+var dying = false
 
 func _physics_process(_delta):
-	velocity.x = clamp(velocity.x,-max_move,max_move)
+	if !dying:
+		velocity.x = clamp(velocity.x,-max_move,max_move)
+			
+		if should_direction_flip:
+			if direction < 0 and not $AnimatedSprite2D.flip_h: 
+				$AnimatedSprite2D.flip_h = true
+				$Attack1.target_position.x = -1*abs($Attack1.target_position.x)
+			if direction > 0 and $AnimatedSprite2D.flip_h: 
+				$AnimatedSprite2D.flip_h = false
+				$Attack1.target_position.x = abs($Attack1.target_position.x)
 		
-	if should_direction_flip:
-		if direction < 0 and not $AnimatedSprite2D.flip_h: 
-			$AnimatedSprite2D.flip_h = true
-			$Attack1.target_position.x = -1*abs($Attack1.target_position.x)
-		if direction > 0 and $AnimatedSprite2D.flip_h: 
-			$AnimatedSprite2D.flip_h = false
-			$Attack1.target_position.x = abs($Attack1.target_position.x)
-	
-	if is_on_floor():
-		double_jumped = false
-		if Input.is_action_just_pressed("Attack1"):
-			SM.set_state("Attacking")
+		if is_on_floor():
+			double_jumped = false
+			if Input.is_action_just_pressed("Attack1"):
+				SM.set_state("Attacking")
 
 func is_moving():
 	if Input.is_action_pressed("Left") or Input.is_action_pressed("Right"):
@@ -73,15 +75,20 @@ func attack():
 			target.damage()
 
 func die():
-	$AnimatedSprite2D.play("Died")
-	
+	if !dying:
+		Global.player_health -= 10
+		set_animation("Hit")
+		if Global.player_health <= 0:
+			dying = true
+			set_animation("Died")
+		
 
 
 func _on_animated_sprite_2d_animation_finished():
-	if $AnimatedSprite2D.animation == "Attack1":
-		SM.set_state("Idle")
 	if $AnimatedSprite2D.animation == "Died":
 		get_tree().change_scene_to_file("res://Scenes/Levels/Dungeon_1.tscn")
+	elif !dying:
+		SM.set_state("Idle")
 
 
 #func _on_body_entered(body):
