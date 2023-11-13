@@ -1204,4 +1204,4 @@ script = ExtResource("2_xy745")
 
 [node name="Boss1" parent="EnemyContainer" instance=ExtResource("4_ppibu")]
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("5_wich7")]
+[node name="Portal" parent="." instance=ExtResource("5_wich7")]

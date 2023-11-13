@@ -79,7 +79,7 @@ scale = Vector2(6.90562, 7.34562)
 sprite_frames = SubResource("SpriteFrames_mj5wt")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.555532
+frame_progress = 0.19094
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

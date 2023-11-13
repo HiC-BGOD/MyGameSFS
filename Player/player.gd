@@ -81,7 +81,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "Attack1":
 		SM.set_state("Idle")
 	if $AnimatedSprite2D.animation == "Died":
-		get_tree().change_scene_to_file("res://Scenes/Levels/Dungeon1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/Dungeon_1.tscn")
 
 
 #func _on_body_entered(body):
