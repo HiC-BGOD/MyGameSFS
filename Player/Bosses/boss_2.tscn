@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://cbnf035unp530"]
+[gd_scene load_steps=37 format=3 uid="uid://cbnf035unp530"]
 
 [ext_resource type="Script" path="res://Player/Bosses/boss_2.gd" id="1_4o0io"]
 [ext_resource type="Texture2D" uid="uid://du8hvp2w7bqvn" path="res://Assets/Fantasy Martial Characters 3/Character_1/attack1.png" id="1_r7ajc"]
 [ext_resource type="Texture2D" uid="uid://dvitw5adxkrox" path="res://Assets/Fantasy Martial Characters 3/Character_1/Death.png" id="2_sp6ou"]
 [ext_resource type="Texture2D" uid="uid://cyw0uioqob7qo" path="res://Assets/Fantasy Martial Characters 3/Character_1/Idle.png" id="3_eooxc"]
+[ext_resource type="Texture2D" uid="uid://c7cjhuqej3yjm" path="res://Assets/Fantasy Martial Characters 3/Character_1/Take Hit - white silhouette.png" id="4_digda"]
 [ext_resource type="Texture2D" uid="uid://easwv48ku4t6" path="res://Assets/Fantasy Martial Characters 3/Character_1/Run.png" id="4_kd6qo"]
 [ext_resource type="Script" path="res://Player/Bosses/StateMachine.gd" id="6_rg3wi"]
 [ext_resource type="Script" path="res://Player/Bosses/Move.gd" id="7_jniip"]
@@ -40,6 +41,22 @@ region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yofg"]
 atlas = ExtResource("2_sp6ou")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgc4i"]
+atlas = ExtResource("4_digda")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enaud"]
+atlas = ExtResource("4_digda")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm8p5"]
+atlas = ExtResource("4_digda")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r5qk"]
+atlas = ExtResource("4_digda")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ylq0"]
@@ -128,6 +145,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qgc4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enaud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm8p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r5qk")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5ylq0")
 }, {
 "duration": 1.0,
@@ -183,9 +217,7 @@ script = ExtResource("1_4o0io")
 position = Vector2(1.52588e-05, -1.00001)
 scale = Vector2(3.045, 3.17)
 sprite_frames = SubResource("SpriteFrames_tu0hg")
-animation = &"Attack1"
-frame = 3
-frame_progress = 1.0
+animation = &"Hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -5.5)

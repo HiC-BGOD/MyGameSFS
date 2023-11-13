@@ -49,7 +49,7 @@ scale = Vector2(9.29562, 8.65062)
 sprite_frames = ExtResource("4_84rgh")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.952685
+frame_progress = 0.377005
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
