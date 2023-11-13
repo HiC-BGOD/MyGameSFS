@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbnnihm8kemtx"]
+
+[ext_resource type="FontFile" uid="uid://etg446xn78qm" path="res://Assets/NinjaNaruto-YOn4.ttf" id="1_q25fm"]
+[ext_resource type="Texture2D" uid="uid://dhsmjee6ba4h5" path="res://Assets/Martial Hero 2/Idle.png" id="2_o41by"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijf34"]
+atlas = ExtResource("2_o41by")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1llr7"]
+atlas = ExtResource("2_o41by")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icbda"]
+atlas = ExtResource("2_o41by")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ie3c"]
+atlas = ExtResource("2_o41by")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mj5wt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijf34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1llr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icbda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ie3c")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Pause_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+color = Color(0.678431, 0.0666667, 0.27451, 0.180392)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 298.0
+offset_right = 630.0
+offset_bottom = 397.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_q25fm")
+text = "Resume"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_q25fm")
+text = "Quit"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(272, 356)
+scale = Vector2(6.90562, 7.34562)
+sprite_frames = SubResource("SpriteFrames_mj5wt")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.555532
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 212.0
+offset_right = 694.0
+offset_bottom = 255.0
+theme_override_fonts/font = ExtResource("1_q25fm")
+theme_override_font_sizes/font_size = 35
+text = " Paused Game"

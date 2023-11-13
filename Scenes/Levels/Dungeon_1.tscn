@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dswpqrf4dvl6n"]
+[gd_scene load_steps=12 format=3 uid="uid://dswpqrf4dvl6n"]
 
 [ext_resource type="Texture2D" uid="uid://bdaqx6n2we2tk" path="res://Assets/Tilemaps/DUNGEON ASSET PACK.png" id="1_p708x"]
 [ext_resource type="Script" path="res://Scenes/PlayerContainer.gd" id="2_xy745"]
 [ext_resource type="PackedScene" uid="uid://c1he2f8kxpi7k" path="res://Player/player.tscn" id="3_kcy3r"]
 [ext_resource type="PackedScene" uid="uid://iwwdy0gdw5xw" path="res://Player/Bosses/boss_1.tscn" id="4_ppibu"]
+[ext_resource type="PackedScene" uid="uid://c4l52ch4bljkm" path="res://Scenes/Levels/animated_sprite_2d.tscn" id="5_wich7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cn6cc"]
 texture = ExtResource("1_p708x")
@@ -1202,3 +1203,5 @@ script = ExtResource("2_xy745")
 [node name="Marker2D" type="Marker2D" parent="EnemyContainer"]
 
 [node name="Boss1" parent="EnemyContainer" instance=ExtResource("4_ppibu")]
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("5_wich7")]

@@ -83,7 +83,7 @@ scale = Vector2(9.29562, 8.65062)
 sprite_frames = SubResource("SpriteFrames_jki3k")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.801535
+frame_progress = 0.657089
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -98,6 +98,9 @@ theme_override_fonts/font = ExtResource("3_4i4s1")
 theme_override_font_sizes/font_size = 70
 text = "          	     Sokka 
 The Five Shadows"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 325)
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
