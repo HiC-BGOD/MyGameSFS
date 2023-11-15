@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dc2sg82rxudr3"]
+[gd_scene load_steps=18 format=3 uid="uid://dc2sg82rxudr3"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Dungeon_3.gd" id="1_5g6f5"]
 [ext_resource type="Texture2D" uid="uid://dv6omprp2ggxu" path="res://Assets/af011b61f477d766b6b85c364c36321e--arte-pixel-pixel-art.jpg" id="1_skk63"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/PlayerContainer.gd" id="4_pyjw8"]
 [ext_resource type="PackedScene" uid="uid://c1he2f8kxpi7k" path="res://Player/player.tscn" id="5_xtu5a"]
 [ext_resource type="PackedScene" uid="uid://b8p0ro1uvr76o" path="res://Player/Bosses/boss_3.tscn" id="6_2obl6"]
+[ext_resource type="PackedScene" uid="uid://dbnnihm8kemtx" path="res://Scenes/UI/pause_menu.tscn" id="8_4kbby"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqat0"]
 texture = ExtResource("3_2usdu")
@@ -3514,3 +3515,6 @@ position = Vector2(17, 587)
 [node name="EnemyContainer" type="Node2D" parent="."]
 
 [node name="Boss_3" parent="EnemyContainer" instance=ExtResource("6_2obl6")]
+
+[node name="Pause_Menu" parent="." instance=ExtResource("8_4kbby")]
+visible = false

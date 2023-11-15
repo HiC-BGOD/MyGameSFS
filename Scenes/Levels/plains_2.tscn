@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bq82kdg3m7sos"]
+[gd_scene load_steps=19 format=3 uid="uid://bq82kdg3m7sos"]
 
 [ext_resource type="Texture2D" uid="uid://d2x25ui2m2upd" path="res://Assets/Tilemaps/Background.png" id="1_lrw3d"]
 [ext_resource type="Texture2D" uid="uid://cnb6vef35n3ad" path="res://Assets/Tilemaps/Tiles.png" id="2_sfv7n"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1he2f8kxpi7k" path="res://Player/player.tscn" id="4_p6dms"]
 [ext_resource type="Script" path="res://Scenes/Levels/PlayerContainer.gd" id="4_qdfnx"]
 [ext_resource type="PackedScene" uid="uid://cbnf035unp530" path="res://Player/Bosses/boss_2.tscn" id="6_onsya"]
+[ext_resource type="PackedScene" uid="uid://dbnnihm8kemtx" path="res://Scenes/UI/pause_menu.tscn" id="7_eegub"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbp72"]
 texture = ExtResource("3_hundd")
@@ -3759,3 +3760,6 @@ position = Vector2(72, 545)
 [node name="EnemyContainer" type="Node2D" parent="."]
 
 [node name="Boss2" parent="EnemyContainer" instance=ExtResource("6_onsya")]
+
+[node name="Pause_Menu" parent="." instance=ExtResource("7_eegub")]
+visible = false

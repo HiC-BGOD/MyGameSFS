@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://c3j6xw4ogn6fj"]
+[gd_scene load_steps=4 format=3 uid="uid://c3j6xw4ogn6fj"]
+
+[ext_resource type="Script" path="res://Scenes/UI/End_game.gd" id="1_dmoou"]
+[ext_resource type="Texture2D" uid="uid://iv7ddn2xxdks" path="res://Assets/OIP.jpg" id="2_r6dbb"]
+[ext_resource type="FontFile" uid="uid://etg446xn78qm" path="res://Assets/NinjaNaruto-YOn4.ttf" id="3_h57d7"]
 
 [node name="End_game" type="Control"]
 layout_mode = 3
@@ -7,3 +11,93 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dmoou")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r6dbb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -477.5
+offset_top = -174.0
+offset_right = 477.5
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.898039, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.858824, 1)
+theme_override_colors/font_outline_color = Color(0, 0.996078, 0, 1)
+theme_override_fonts/font = ExtResource("3_h57d7")
+theme_override_font_sizes/font_size = 50
+text = "You Have Defeated All The Shadows 
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.5
+offset_top = -74.0
+offset_right = 207.5
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.862745, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.941176, 1)
+theme_override_colors/font_outline_color = Color(0, 0.964706, 0, 1)
+theme_override_fonts/font = ExtResource("3_h57d7")
+theme_override_font_sizes/font_size = 40
+text = "Thanks for Playing!"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 46.0
+offset_right = 74.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_h57d7")
+text = "Restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 96.0
+offset_right = 74.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_h57d7")
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
