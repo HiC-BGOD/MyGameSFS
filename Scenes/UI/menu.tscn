@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://buin3p48gblx5"]
+[gd_scene load_steps=5 format=3 uid="uid://buin3p48gblx5"]
 
 [ext_resource type="Script" path="res://Scenes/UI/menu.gd" id="1_6mcvc"]
 [ext_resource type="Texture2D" uid="uid://iv7ddn2xxdks" path="res://Assets/OIP.jpg" id="1_aef05"]
 [ext_resource type="FontFile" uid="uid://etg446xn78qm" path="res://Assets/NinjaNaruto-YOn4.ttf" id="3_4i4s1"]
 [ext_resource type="SpriteFrames" uid="uid://0tasgsreo41x" path="res://Scenes/UI/menu_animation.tres" id="4_84rgh"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_05srt"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -17,12 +15,14 @@ grow_vertical = 2
 script = ExtResource("1_6mcvc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 1155.0
-offset_bottom = 650.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_aef05")
+metadata/_edit_use_anchors_ = true
 
 [node name="Start_Button" type="Button" parent="."]
 layout_mode = 0
@@ -49,7 +49,7 @@ scale = Vector2(9.29562, 8.65062)
 sprite_frames = ExtResource("4_84rgh")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.556733
+frame_progress = 0.555766
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -64,12 +64,6 @@ theme_override_fonts/font = ExtResource("3_4i4s1")
 theme_override_font_sizes/font_size = 70
 text = "          	     Sokka 
 The Five Shadows"
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AnimatedTexture_05srt")
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

@@ -84,7 +84,7 @@ scale = Vector2(4.17411, 4.58008)
 sprite_frames = SubResource("SpriteFrames_vjl2r")
 animation = &"Portal"
 autoplay = "Portal"
-frame_progress = 0.729525
+frame_progress = 0.834718
 flip_h = true
 
 [node name="Area2D" type="Area2D" parent="."]
