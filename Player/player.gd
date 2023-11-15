@@ -79,8 +79,10 @@ func die():
 		Global.player_health -= 10
 		set_animation("Hit")
 		if Global.player_health <= 0:
-			dying = true
+			dying = true #find way to set dying boolean back to false after player dies.
 			set_animation("Died")
+		
+			_on_animated_sprite_2d_animation_finished()
 		
 
 

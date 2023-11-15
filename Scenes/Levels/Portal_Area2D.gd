@@ -19,4 +19,4 @@ func _on_body_entered(body):
 		elif current_level == "res://Scenes/Levels/plains_2.tscn":
 			get_tree().change_scene_to_file("res://Scenes/Levels/Dungeon_3.tscn")
 		elif current_level == "res://Scenes/Dungeon_3.tscn":
-			get_tree().change_scene_to_file("res://Scenes/End_Game.tscn")
+			get_tree().change_scene_to_file("res://Scenes/UI/End_game.tscn")

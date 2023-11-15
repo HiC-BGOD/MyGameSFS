@@ -215,7 +215,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Died",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -226,7 +226,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Fall",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -240,7 +240,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Hit",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -312,8 +312,6 @@ scale = Vector2(1.7375, 1.7125)
 sprite_frames = SubResource("SpriteFrames_plwj6")
 animation = &"Hit"
 autoplay = "Jump"
-frame = 2
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dj6bc")

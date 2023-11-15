@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dswpqrf4dvl6n"]
+[gd_scene load_steps=13 format=3 uid="uid://dswpqrf4dvl6n"]
 
 [ext_resource type="Texture2D" uid="uid://bdaqx6n2we2tk" path="res://Assets/Tilemaps/DUNGEON ASSET PACK.png" id="1_p708x"]
+[ext_resource type="Script" path="res://Scenes/Levels/Dungeon_1.gd" id="1_w0ov3"]
 [ext_resource type="Script" path="res://Scenes/PlayerContainer.gd" id="2_xy745"]
 [ext_resource type="PackedScene" uid="uid://c1he2f8kxpi7k" path="res://Player/player.tscn" id="3_kcy3r"]
 [ext_resource type="PackedScene" uid="uid://iwwdy0gdw5xw" path="res://Player/Bosses/boss_1.tscn" id="4_ppibu"]
@@ -1175,6 +1176,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sygfn")
 
 [node name="Dungeon1" type="Node2D"]
+script = ExtResource("1_w0ov3")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wd8m1")
