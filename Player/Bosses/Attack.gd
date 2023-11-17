@@ -9,6 +9,7 @@ func _ready():
 
 func start():
 	enemy.set_animation("Attack1")
+	$EnemySword.play()
 	enemy.velocity = Vector2.ZERO
 	$Timer.start()
 

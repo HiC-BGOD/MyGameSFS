@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cbnf035unp530"]
+[gd_scene load_steps=39 format=3 uid="uid://cbnf035unp530"]
 
 [ext_resource type="Script" path="res://Player/Bosses/boss_2.gd" id="1_4o0io"]
 [ext_resource type="Texture2D" uid="uid://du8hvp2w7bqvn" path="res://Assets/Fantasy Martial Characters 3/Character_1/attack1.png" id="1_r7ajc"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://Player/Bosses/Move.gd" id="7_jniip"]
 [ext_resource type="Script" path="res://Player/Bosses/Attack.gd" id="8_s4apj"]
 [ext_resource type="Script" path="res://Player/Bosses/Die.gd" id="9_tgnep"]
+[ext_resource type="AudioStream" uid="uid://chhl860spl2qy" path="res://knife-slice-41231.mp3" id="10_ydeo1"]
+[ext_resource type="AudioStream" uid="uid://cnnuqw851fugc" path="res://oof-97698.mp3" id="12_uqxbf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5blrr"]
 atlas = ExtResource("1_r7ajc")
@@ -239,8 +241,14 @@ script = ExtResource("8_s4apj")
 wait_time = 0.5
 one_shot = true
 
+[node name="EnemySword" type="AudioStreamPlayer" parent="StateMachine/Attack"]
+stream = ExtResource("10_ydeo1")
+
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource("9_tgnep")
+
+[node name="Hit_boss2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_uqxbf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="StateMachine/Attack/Timer" to="StateMachine/Attack" method="_on_timer_timeout"]

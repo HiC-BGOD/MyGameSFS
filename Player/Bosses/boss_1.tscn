@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://iwwdy0gdw5xw"]
+[gd_scene load_steps=45 format=3 uid="uid://iwwdy0gdw5xw"]
 
 [ext_resource type="Script" path="res://Player/Bosses/boss_1.gd" id="1_v2y3r"]
 [ext_resource type="Script" path="res://Player/Bosses/StateMachine.gd" id="2_4ij4b"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Player/Bosses/Die.gd" id="5_jbnai"]
 [ext_resource type="Texture2D" uid="uid://d044yd81xj6vn" path="res://Assets/Fantasy Martial Characters 3/Character_6/Idle.png" id="6_rugim"]
 [ext_resource type="Texture2D" uid="uid://cm0logbrrqaer" path="res://Assets/Fantasy Martial Characters 3/Character_6/Run.png" id="7_cab8w"]
+[ext_resource type="AudioStream" uid="uid://c1hf0isxpj00f" path="res://clean-fast-swooshaiff-14784.mp3" id="11_1ed4c"]
+[ext_resource type="AudioStream" uid="uid://b54yxe24eh8mw" path="res://monster-roar-6985.mp3" id="13_hskte"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_81uqt"]
 atlas = ExtResource("2_pvtcj")
@@ -254,7 +256,7 @@ script = ExtResource("1_v2y3r")
 position = Vector2(9.53674e-07, 1.90735e-06)
 scale = Vector2(3.3675, 2.8625)
 sprite_frames = SubResource("SpriteFrames_g0pt2")
-animation = &"Attack1"
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(11.5, 11)
@@ -275,6 +277,9 @@ script = ExtResource("4_dvigv")
 [node name="Timer" type="Timer" parent="StateMachine/Attack"]
 wait_time = 0.5
 
+[node name="EnemySword" type="AudioStreamPlayer" parent="StateMachine/Attack"]
+stream = ExtResource("11_1ed4c")
+
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource("5_jbnai")
 
@@ -283,6 +288,10 @@ script = ExtResource("5_jbnai")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Above_and_Below"]
 position = Vector2(11.5, -52)
 shape = SubResource("RectangleShape2D_3ccvt")
+
+[node name="Boss1_Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_hskte")
+volume_db = -7.496
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="StateMachine/Attack/Timer" to="StateMachine/Attack" method="_on_timer_timeout"]

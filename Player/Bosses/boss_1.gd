@@ -45,6 +45,7 @@ func set_animation(anim):
 func damage():
 	enemy_health -= 20
 	set_animation("Hit")
+	$Boss1_Hit.play()
 	if enemy_health <= 0:
 		if SM.state_name != "Die":
 			SM.set_state("Die")
