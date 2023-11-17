@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bq82kdg3m7sos"]
+[gd_scene load_steps=20 format=3 uid="uid://bq82kdg3m7sos"]
 
 [ext_resource type="Texture2D" uid="uid://d2x25ui2m2upd" path="res://Assets/Tilemaps/Background.png" id="1_lrw3d"]
 [ext_resource type="Texture2D" uid="uid://cnb6vef35n3ad" path="res://Assets/Tilemaps/Tiles.png" id="2_sfv7n"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/PlayerContainer.gd" id="4_qdfnx"]
 [ext_resource type="PackedScene" uid="uid://cbnf035unp530" path="res://Player/Bosses/boss_2.tscn" id="6_onsya"]
 [ext_resource type="PackedScene" uid="uid://dbnnihm8kemtx" path="res://Scenes/UI/pause_menu.tscn" id="7_eegub"]
+[ext_resource type="AudioStream" uid="uid://6yi2e175fxkd" path="res://251461__joshuaempyre__arcade-music-loop.wav" id="8_dl4ig"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbp72"]
 texture = ExtResource("3_hundd")
@@ -3763,3 +3764,8 @@ position = Vector2(72, 545)
 
 [node name="Pause_Menu" parent="." instance=ExtResource("7_eegub")]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_dl4ig")
+volume_db = -19.099
+autoplay = true

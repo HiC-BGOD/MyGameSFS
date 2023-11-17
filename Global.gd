@@ -10,6 +10,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		var p = get_node_or_null("/root/Dungeon1/Pause_Menu")
+		
 		if p != null:
 			if p.visible:
 				get_tree().paused = false

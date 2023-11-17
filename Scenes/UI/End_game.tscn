@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3j6xw4ogn6fj"]
+[gd_scene load_steps=5 format=3 uid="uid://c3j6xw4ogn6fj"]
 
 [ext_resource type="Script" path="res://Scenes/UI/End_game.gd" id="1_dmoou"]
 [ext_resource type="Texture2D" uid="uid://iv7ddn2xxdks" path="res://Assets/OIP.jpg" id="2_r6dbb"]
 [ext_resource type="FontFile" uid="uid://etg446xn78qm" path="res://Assets/NinjaNaruto-YOn4.ttf" id="3_h57d7"]
+[ext_resource type="AudioStream" uid="uid://b7icvelhsm2fm" path="res://702252__betabeats__song-musical-experiment (1).wav" id="4_kq67u"]
 
 [node name="End_game" type="Control"]
 layout_mode = 3
@@ -98,6 +99,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_h57d7")
 text = "Quit"
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kq67u")
+volume_db = -8.432
+autoplay = true
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

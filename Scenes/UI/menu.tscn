@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://buin3p48gblx5"]
+[gd_scene load_steps=6 format=3 uid="uid://buin3p48gblx5"]
 
 [ext_resource type="Script" path="res://Scenes/UI/menu.gd" id="1_6mcvc"]
 [ext_resource type="Texture2D" uid="uid://iv7ddn2xxdks" path="res://Assets/OIP.jpg" id="1_aef05"]
 [ext_resource type="FontFile" uid="uid://etg446xn78qm" path="res://Assets/NinjaNaruto-YOn4.ttf" id="3_4i4s1"]
 [ext_resource type="SpriteFrames" uid="uid://0tasgsreo41x" path="res://Scenes/UI/menu_animation.tres" id="4_84rgh"]
+[ext_resource type="AudioStream" uid="uid://8ps5eiw5ibw6" path="res://391828__zagi2__koto-theme.wav" id="5_o16or"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -49,7 +50,7 @@ scale = Vector2(9.29562, 8.65062)
 sprite_frames = ExtResource("4_84rgh")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.555766
+frame_progress = 0.268234
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -64,6 +65,10 @@ theme_override_fonts/font = ExtResource("3_4i4s1")
 theme_override_font_sizes/font_size = 70
 text = "          	     Sokka 
 The Five Shadows"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_o16or")
+autoplay = true
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

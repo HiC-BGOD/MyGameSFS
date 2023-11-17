@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://b8p0ro1uvr76o"]
+[gd_scene load_steps=51 format=3 uid="uid://b8p0ro1uvr76o"]
 
 [ext_resource type="Script" path="res://Player/Bosses/boss_3.gd" id="1_w4mpm"]
 [ext_resource type="Texture2D" uid="uid://dp5egddxaaeu5" path="res://Assets/Ghost Warrior 2/Sprites/attack.png" id="2_t8s72"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Player/Bosses/Move.gd" id="8_1bhne"]
 [ext_resource type="Script" path="res://Player/Bosses/Attack.gd" id="9_ggncl"]
 [ext_resource type="Script" path="res://Player/Bosses/Die.gd" id="10_c131l"]
+[ext_resource type="AudioStream" uid="uid://cnobgwacimd74" path="res://dragon-hurt-47161.mp3" id="11_f3wum"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kob7g"]
 atlas = ExtResource("2_t8s72")
@@ -194,7 +195,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack1",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -329,10 +330,15 @@ script = ExtResource("8_1bhne")
 script = ExtResource("9_ggncl")
 
 [node name="Timer" type="Timer" parent="StateMachine/Attack"]
-wait_time = 0.5
+wait_time = 0.6
+one_shot = true
 
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource("10_c131l")
+
+[node name="Hurting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_f3wum")
+volume_db = -3.773
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="StateMachine/Attack/Timer" to="StateMachine/Attack" method="_on_timer_timeout"]

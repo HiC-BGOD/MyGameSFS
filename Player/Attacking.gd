@@ -11,6 +11,7 @@ func start():
 	if !is_attacking:
 		is_attacking = true
 		player.set_animation("Attack1",Vector2(5,7))
+		$Sword.play()
 		$Timer.start()
 
 func end():
@@ -26,3 +27,6 @@ func _on_timer_timeout():
 		player.attack()
 		is_attacking = false
 		
+
+
+

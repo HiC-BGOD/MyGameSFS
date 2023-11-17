@@ -12,6 +12,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
+# had help from another professor Francis
 	var current_level = get_tree().current_scene.scene_file_path
 	if body.name == "Player":
 		if current_level == "res://Scenes/Levels/Dungeon_1.tscn":

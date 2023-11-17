@@ -45,6 +45,7 @@ func set_animation(anim):
 func damage():
 	enemy_health -= 20
 	set_animation("Hit")
+	$Hurting.play()
 	if enemy_health <= 0:
 		if SM.state_name != "Die":
 			SM.set_state("Die")
@@ -52,14 +53,10 @@ func damage():
 
 func should_attack():
 	if $Attack1.is_colliding() and $Attack1.get_collider().name == "Player":
-		print($Attack1.get_collider())
-	if $Attack1.is_colliding() and $Attack1.get_collider().name == "Player":
 		return true
 	return false
 
 func attack_target():
-	if $Attack1.is_colliding():
-		return $Attack1.get_collider()
 	if $Attack1.is_colliding():
 		return $Attack1.get_collider()
 	return null

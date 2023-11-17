@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://c1he2f8kxpi7k"]
+[gd_scene load_steps=59 format=3 uid="uid://c1he2f8kxpi7k"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ea2xg"]
 [ext_resource type="Script" path="res://Player/StateMachine.gd" id="2_0hknb"]
@@ -18,6 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://bxe11yclqq78a" path="res://Assets/Martial Hero 2/Sprites/Run.png" id="9_buquf"]
 [ext_resource type="Script" path="res://Player/Attacking.gd" id="9_cnb3l"]
 [ext_resource type="Script" path="res://Player/Camera2D.gd" id="10_tdycw"]
+[ext_resource type="AudioStream" uid="uid://t0uv08ylfabe" path="res://707339__mht23sd__unsheathing-sword-slow-dramatic.wav" id="19_63624"]
+[ext_resource type="AudioStream" uid="uid://bx2jgmx7j73a4" path="res://702942__franzzle__swordhit1.wav" id="20_oucle"]
+[ext_resource type="AudioStream" uid="uid://shagobhkgamb" path="res://male_hurt7-48124.mp3" id="21_fr20p"]
+[ext_resource type="AudioStream" uid="uid://d1pnmf36m1v56" path="res://080556_quotyou-losequot-88884.mp3" id="22_mi1wk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rrew3"]
 atlas = ExtResource("2_x2lg7")
@@ -310,7 +314,7 @@ script = ExtResource("1_ea2xg")
 position = Vector2(0, -1.90735e-06)
 scale = Vector2(1.7375, 1.7125)
 sprite_frames = SubResource("SpriteFrames_plwj6")
-animation = &"Hit"
+animation = &"Attack1"
 autoplay = "Jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -351,8 +355,23 @@ script = ExtResource("9_cnb3l")
 [node name="Timer" type="Timer" parent="StateMachine/Attacking"]
 wait_time = 0.5
 
+[node name="Sword" type="AudioStreamPlayer" parent="StateMachine/Attacking"]
+stream = ExtResource("19_63624")
+volume_db = 1.874
+
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("10_tdycw")
+
+[node name="Hit_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_oucle")
+volume_db = -8.793
+
+[node name="PlayerHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_fr20p")
+volume_db = -8.793
+
+[node name="Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_mi1wk")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="StateMachine/Coyote/Timer" to="StateMachine/Coyote" method="_on_timer_timeout"]

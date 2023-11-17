@@ -58,12 +58,16 @@ func _unhandled_input(event):
 
 func set_animation(anim, off=Vector2.ZERO):
 	if $AnimatedSprite2D.animation == anim: return
+#	if $AnimatedSprite2D.is_playing() and !$AnimatedSprite2D.sprite_frames.get_animation_loop($AnimatedSprite2D.animation):
+#		return
 	if $AnimatedSprite2D.sprite_frames.has_animation(anim): $AnimatedSprite2D.play(anim)
 	else: $AnimatedSprite2D.play()
 	$AnimatedSprite2D.offset = off
+	print($AnimatedSprite2D.animation)
 
 func attack():
 	if $Attack1.is_colliding():
+		$Hit_Sound.play()
 		var target = $Attack1.get_collider()
 		print(target)
 		if target.has_method("damage"):
@@ -78,11 +82,13 @@ func die():
 	if !dying:
 		Global.player_health -= 10
 		set_animation("Hit")
+		$PlayerHit.play()
 		if Global.player_health <= 0:
 			dying = true #find way to set dying boolean back to false after player dies.
 			set_animation("Died")
+			$Lose.play()
 		
-			_on_animated_sprite_2d_animation_finished()
+		
 		
 
 
