@@ -41,6 +41,8 @@ func _physics_process(_delta):
 			double_jumped = false
 			if Input.is_action_just_pressed("Attack1"):
 				SM.set_state("Attacking")
+	else:
+		set_animation("Died")
 
 func is_moving():
 	if Input.is_action_pressed("Left") or Input.is_action_pressed("Right"):
