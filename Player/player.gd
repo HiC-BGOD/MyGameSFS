@@ -41,6 +41,8 @@ func _physics_process(_delta):
 			double_jumped = false
 			if Input.is_action_just_pressed("Attack1"):
 				SM.set_state("Attacking")
+	else:
+		set_animation("Died")
 
 func is_moving():
 	if Input.is_action_pressed("Left") or Input.is_action_pressed("Right"):
@@ -57,24 +59,22 @@ func _unhandled_input(event):
 		direction = 1
 
 func set_animation(anim, off=Vector2.ZERO):
-	if $AnimatedSprite2D.animation == anim: return
-#	if $AnimatedSprite2D.is_playing() and !$AnimatedSprite2D.sprite_frames.get_animation_loop($AnimatedSprite2D.animation):
-#		return
-	if $AnimatedSprite2D.sprite_frames.has_animation(anim): $AnimatedSprite2D.play(anim)
+	if $AnimatedSprite2D.is_playing() and anim != "Died":
+		if $AnimatedSprite2D.animation == anim: return
+		if !$AnimatedSprite2D.sprite_frames.get_animation_loop($AnimatedSprite2D.animation): return
+	if $AnimatedSprite2D.sprite_frames.has_animation(anim): 
+		$AnimatedSprite2D.play(anim)
 	else: $AnimatedSprite2D.play()
 	$AnimatedSprite2D.offset = off
-	print($AnimatedSprite2D.animation)
 
 func attack():
 	if $Attack1.is_colliding():
 		$Hit_Sound.play()
 		var target = $Attack1.get_collider()
-		print(target)
 		if target.has_method("damage"):
 			target.damage()
 	if $Attack2.is_colliding():
 		var target = $Attack2.get_collider()
-		print(target)
 		if target.has_method("damage"):
 			target.damage()
 
